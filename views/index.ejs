@@ -6,7 +6,11 @@
     <%= title %>
   </title>
   <link rel='stylesheet' href='/stylesheets/style.css' />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" media="screen" title="no title" charset="utf-8">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+  <script type="text/javascript" src="/javascripts/app.js"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBj9Fo9kRojTI2t6idLbLV7KE7FMEta0m4"></script>
+  <script type="text/javascript" src="/javascripts/gmaps.js"></script>
 </head>
 
 <body>
@@ -21,37 +25,57 @@
   </header>
 
 
-    <div class="row search">
-      <div class="four columns">
+  <div class="row search">
+    <div class="four columns">
 
-      </div>
-
-      <div class="four columns search">
-        <img src="/images/pinmap2.png" height="100px" width="100px" alt="" />
-      </div>
-
-      <div class="four columns">
-
-      </div>
     </div>
 
-    <div class="row content">
-      <div class="four columns">
+    <div class="four columns search">
+      <div class="row">
 
+
+        <div class="two columns">
+
+        </div>
+        <div class="eight columns">
+          <img id="pinmap" src="/images/pinmap2.png" alt="" />
+          <input class="u-full-width" type="text" name="city" value="" id="city-input" placeholder="Enter City">
+          <input class="button-primary" id="city-submit" type="button" name="map" value="Submit">
+        </div>
+        <div class="two columns">
+
+        </div>
       </div>
 
-      <div class="four columns main-content">
-
-      </div>
-
-      <div class="four columns">
-
-      </div>
     </div>
 
-<footer>
-  &copy;2015
-</footer>
+    <div class="four columns">
+
+    </div>
+  </div>
+
+  <div class="row content">
+    <div class="three columns">
+
+    </div>
+
+    <div class="six columns main-content">
+      <div id="map">
+
+      </div>
+      <ul>
+
+      </ul>
+    </div>
+
+    <div class="three columns">
+
+    </div>
+  </div>
+
+  <footer>
+    &copy;2015
+  </footer>
 
 </body>
 
