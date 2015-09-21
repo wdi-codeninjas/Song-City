@@ -22,7 +22,7 @@ $(document).ready(function() {
         console.log(data);
 
         for (var i = 0; i < 40; i++) {
-          $("ul").append("<li>" + data[i].artists[0].name + " | " + data[i].venue.name + "</li>");
+          $("ul").append("<li>" + data[i].datetime + data[i].artists[0].name + " | " + data[i].venue.name + "</li>");
           artists[i] = data[i].artists[0].name;
           var lat = data[i].venue.latitude;
           var long = data[i].venue.longitude;
@@ -47,7 +47,7 @@ $(document).ready(function() {
       success: function(data) {
 
             console.log(artists[i]);
-          
+
       }
     });
   };
