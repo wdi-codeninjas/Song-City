@@ -16,7 +16,7 @@ $(document).ready(function() {
 
     $.ajax({
       method: "GET",
-      url: "https://api.bandsintown.com/events/search?location=" + cityname + "&format=json&app_id=SongCity",
+      url: "//api.bandsintown.com/events/search?location=" + cityname + "&format=json&app_id=SongCity",
       dataType: "jsonp",
       success: function(data) {
         console.log(data);
@@ -37,7 +37,7 @@ $(document).ready(function() {
           });
           $.ajax({
             method: "GET",
-            url: 'https://api.bandsintown.com/artists/' + artists[i] + '.json?api_version=2.0&app_id=SongCity',
+            url: '//api.bandsintown.com/artists/' + artists[i] + '.json?api_version=2.0&app_id=SongCity',
             dataType: "jsonp",
             success: function(data) {
 
