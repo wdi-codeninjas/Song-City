@@ -16,13 +16,13 @@ $(document).ready(function() {
 
     $.ajax({
       method: "GET",
-      url: "http://api.bandsintown.com/events/search?location=" + cityname + "&format=json&app_id=SongCity",
+      url: "https://api.bandsintown.com/events/search?location=" + cityname + "&format=json&app_id=SongCity",
       dataType: "jsonp",
       success: function(data) {
         console.log(data);
 
         for (var i = 0; i < 40; i++) {
-          $("ul").append("<li>" + data[i].datetime + data[i].artists[0].name + " | " + data[i].venue.name + "</li>");
+          $("ul").append("<li>" + data[i].artists[0].name + " | " + data[i].venue.name + "</li>");
           artists[i] = data[i].artists[0].name;
           var lat = data[i].venue.latitude;
           var long = data[i].venue.longitude;
@@ -35,25 +35,24 @@ $(document).ready(function() {
               alert('You clicked in this marker');
             }
           });
-        }
+          $.ajax({
+            method: "GET",
+            url: 'http://api.bandsintown.com/artists/' + artists[i] + '.json?api_version=2.0&app_id=SongCity',
+            dataType: "jsonp",
+            success: function(data) {
 
+              console.log(artists[i]);
+
+            }
+          });
+        };
       }
-    });
-    for(var i = 0; i < 40; i++) {
-    $.ajax({
-      method: "GET",
-      url: 'http://api.bandsintown.com/artists/'+ artists[i] + '.json?api_version=2.0&app_id=SongCity',
-      dataType: "jsonp",
-      success: function(data) {
 
-            console.log(artists[i]);
 
-      }
     });
-  };
+
+
 
   });
-
-
 
 });
