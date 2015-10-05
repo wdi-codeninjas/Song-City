@@ -41,7 +41,8 @@ $(document).ready(function() {
             dataType: "jsonp",
             success: function(data) {
 
-              console.log(artists[i]);
+              // console.log(data);
+              $("ul").append("<img height='200px' width='200px' src='" + data.image_url + "'>");
 
             }
           });
