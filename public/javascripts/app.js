@@ -37,7 +37,7 @@ $(document).ready(function() {
           });
           $.ajax({
             method: "GET",
-            url: 'http://api.bandsintown.com/artists/' + artists[i] + '.json?api_version=2.0&app_id=SongCity',
+            url: 'https://api.bandsintown.com/artists/' + artists[i] + '.json?api_version=2.0&app_id=SongCity',
             dataType: "jsonp",
             success: function(data) {
 
