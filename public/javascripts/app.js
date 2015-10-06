@@ -1,6 +1,7 @@
 $(document).ready(function() {
   //http://api.bandsintown.com/artists/Skrillex.json?api_version=2.0&app_id=YOUR_APP_ID
   var artists = [];
+  //change this and the other below
   $('.six.columns.main-content').hide();
   $('#city-submit').click(function(evt) {
     var cityname = $('#city-input').val();
@@ -20,9 +21,10 @@ $(document).ready(function() {
       dataType: "jsonp",
       success: function(data) {
         console.log(data);
+      //////////////////////////////we need to add in the date///////////////////////////
 
         for (var i = 0; i < 40; i++) {
-          $("ul").append("<li>" + data[i].artists[0].name + " | " + data[i].venue.name + "</li>");
+          $(".text-content").append("<li>" + data[i].artists[0].name + " | " + data[i].venue.name + "</li>");
           artists[i] = data[i].artists[0].name;
           var lat = data[i].venue.latitude;
           var long = data[i].venue.longitude;
@@ -42,7 +44,7 @@ $(document).ready(function() {
             success: function(data) {
 
               // console.log(data);
-              $("ul").append("<img height='200px' width='200px' src='" + data.image_url + "'>");
+              $(".img-content").append("<img height='200px' width='200px' src='" + data.image_url + "'>");
 
             }
           });
