@@ -116,7 +116,7 @@ $(document).ready(function() {
         dataType: "jsonp",
         success: function(data) {
           workingArtist.artists[0].image = data.image_url;
-          $("ul").append("<li>" + workingArtist.artists[0].name + " | " + workingArtist.venue.name + "<img height='200px' width='200px' src='" + workingArtist.artists[0].image + "'></li>");
+          $("ul").append("<li>" + workingArtist.artists[0].name + " | " + workingArtist.venue.name + timeConversion(workingArtist.datetime) + "<img height='200px' width='200px' src='" + workingArtist.artists[0].image + "'></li>");
           // $("ul").append("<img height='200px' width='200px' src='" + data.image_url + "'>");
 
         }
