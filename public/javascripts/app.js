@@ -1,7 +1,7 @@
 $(document).ready(function() {
   $(".eight.columns.main-content").hide();
   $("#city-submit").on('click', function() {
-      $(".eight.columns.main-content").fadeIn(200);
+      $(".eight.columns.main-content").slideDown(200);
   });
 
   //http://api.bandsintown.com/artists/Skrillex.json?api_version=2.0&app_id=YOUR_APP_ID
