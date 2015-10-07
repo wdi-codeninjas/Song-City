@@ -1,11 +1,9 @@
 $(document).ready(function() {
-  function timeConversion(time) {
-    var convertedTime;
-    for (var i = 0; i < 10; i++) {
-      convertedTime += time.charAt(i);
-    };
-    return convertedTime;
-  };
+  $(".eight.columns.main-content").hide();
+  $("#city-submit").on('click', function() {
+      $(".eight.columns.main-content").fadeIn(200);
+  });
+
   //http://api.bandsintown.com/artists/Skrillex.json?api_version=2.0&app_id=YOUR_APP_ID
   var artistArray = [];
   $('.six.columns.main-content').hide();
@@ -61,7 +59,7 @@ $(document).ready(function() {
         success: function(data) {
           // console.log(results)
           workingArtist.artists[0].image = data.image_url;
-          $("ul").append("<li>" + workingArtist.artists[0].name + " | " + workingArtist.venue.name + timeConversion(workingArtist.datetime) + "<img class='artist-image' height='200px' width='200px' src='" + workingArtist.artists[0].image + "'></li><hr>");
+          $("ul").append("<li>" + workingArtist.artists[0].name + "</li></li> " + workingArtist.venue.name + "</li><li>" + timeConversion(workingArtist.datetime) + "</li><li><img class='artist-image' height='200px' width='200px' src='" + workingArtist.artists[0].image + "'></li><hr>");
           // $("ul").append("<img height='200px' width='200px' src='" + data.image_url + "'>");
 
         }
@@ -73,3 +71,11 @@ $(document).ready(function() {
   });
 
 });
+
+function timeConversion(time) {
+  var convertedTime = "";
+  for (var i = 0; i < 10; i++) {
+    convertedTime += time.charAt(i);
+  };
+  return convertedTime;
+};
